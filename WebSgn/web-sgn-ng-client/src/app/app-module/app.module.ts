@@ -6,6 +6,8 @@ import { AppComponent } from './components/app/app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MenuModule } from '../menu/menu.module';
 import { HomeModule } from '../home/home.module';
+import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
+import { InMemoryWebApiService } from '../shared/mocks/in-memory-web-api.service';
 
 @NgModule({
   declarations: [
@@ -13,10 +15,12 @@ import { HomeModule } from '../home/home.module';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
     BrowserAnimationsModule,
     MenuModule,
-    HomeModule
+    HomeModule,
+
+    AppRoutingModule,
+    InMemoryWebApiModule.forRoot(InMemoryWebApiService),
   ],
   providers: [],
   bootstrap: [AppComponent]

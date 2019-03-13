@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ViewportService } from 'src/app/core/services/viewport.service';
 
 @Component({
   selector: 'sgn-menu',
@@ -7,7 +8,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MenuComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    public readonly vp: ViewportService,
+  ) { }
 
   ngOnInit() {
   }

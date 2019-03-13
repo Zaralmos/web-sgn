@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NewsProviderService } from '../../services/news-provider.service';
 
 @Component({
   selector: 'sgn-news-section',
@@ -7,7 +8,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NewsSectionComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    provider: NewsProviderService
+  ) { }
 
   ngOnInit() {
   }
