@@ -1,3 +1,10 @@
-<p>
-  menu works! {{vp.desktop}}<a href="/">HOME</a> <a href="/enrollee/sgn3">SGN3</a><a href="/enrollee/sgn2">SGN2</a>
-</p>
+<nav [class.on-top]="menu.transparentAtTop && scroll.scrollTop < 10">
+  <menu class="basic-container">
+    <li class="logo" [class.on-top]="scroll.scrollTop < 10">СГН</li>
+    <li>Абитуриенту</li>
+    <li>Новости</li>
+    <li>Структура</li>
+    <!-- <li>Поиск</li> -->
+    <li>Войти</li>
+  </menu>
+</nav>

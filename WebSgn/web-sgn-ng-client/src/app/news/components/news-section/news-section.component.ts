@@ -1,5 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { NewsProviderService } from '../../services/news-provider.service';
+import { NewsSearchParams } from 'src/app/shared/models/news-search-params';
+import { NewsItem } from 'src/app/shared/models/news-item';
 
 @Component({
   selector: 'sgn-news-section',
@@ -8,11 +10,17 @@ import { NewsProviderService } from '../../services/news-provider.service';
 })
 export class NewsSectionComponent implements OnInit {
 
+  @Input()
+  public params?: NewsSearchParams;
+
+  public news!: NewsItem[];
+
   constructor(
-    provider: NewsProviderService
+    private readonly provider: NewsProviderService
   ) { }
 
-  ngOnInit() {
+  async ngOnInit() {
+    this.news = await this.provider.search(this.params);
   }
 
 }

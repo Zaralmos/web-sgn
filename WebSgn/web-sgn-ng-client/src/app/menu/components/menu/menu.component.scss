@@ -1,0 +1,27 @@
+nav {
+    width: 100%;
+    background: var(--title-color);
+    &.on-top {
+        background: transparent;
+    }
+    transition-duration: .5s;
+}
+
+menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--single-padding) 0;
+    list-style-type: none;
+    color: var(--bg-color);
+    li {
+        padding: 10px var(--single-padding);
+    }
+}
+
+.logo {
+    transition-duration: .5s;
+    &.on-top {
+        font-size: 2em;
+    }
+}

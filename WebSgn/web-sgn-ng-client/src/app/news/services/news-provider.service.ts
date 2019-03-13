@@ -3,9 +3,7 @@ import { HttpService } from 'src/app/core/services/http.service';
 import { NewsItem } from 'src/app/shared/models/news-item';
 import { NewsSearchParams } from 'src/app/shared/models/news-search-params';
 
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable()
 export class NewsProviderService {
 
   constructor(

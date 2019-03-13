@@ -15,5 +15,6 @@ import { CoreModule } from '../core/core.module';
     CoreModule
   ],
   exports: [NewsItemComponent, NewsSectionComponent],
+  providers: [NewsProviderService]
 })
 export class NewsModule { }
