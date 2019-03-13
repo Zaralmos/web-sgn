@@ -5,7 +5,7 @@ import { HomePageComponent } from '../home/components/home-page/home-page.compon
 const routes: Routes = [
   { path: 'enrollee', loadChildren: './../enrollee/enrollee.module#EnrolleeModule' },
   // { path: 'news', loadChildren: './../enrollee/enrollee.module#EnrolleeModule' },
-  { path: '', component: HomePageComponent },
+  { path: '', loadChildren: './../home/home.module#HomeModule' },
   { path: '**', redirectTo: '' }
 ];
 
