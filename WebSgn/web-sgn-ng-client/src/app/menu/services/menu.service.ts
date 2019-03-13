@@ -7,6 +7,8 @@ export class MenuService {
 
   public transparentAtTop = true;
 
+  public mobileOpened = false;
+
   constructor() { }
 
 }

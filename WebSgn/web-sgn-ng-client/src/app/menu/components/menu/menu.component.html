@@ -1,10 +1,33 @@
-<nav [class.on-top]="menu.transparentAtTop && scroll.scrollTop < 10">
-  <menu class="basic-container">
+<nav [class.on-top]="menu.transparentAtTop && scroll.scrollTop < 10 && !menu.mobileOpened"
+  [class.mobile-opened]="vp.mobile && menu.mobileOpened">
+  <menu class="main basic-container">
     <li class="logo" [class.on-top]="scroll.scrollTop < 10">СГН</li>
+    <ng-container *ngIf="vp.desktop">
+      <li (mouseenter)="onEnter('enrollee')">Абитуриенту</li>
+      <li>Новости</li>
+      <li>Структура</li>
+    </ng-container>
+    <!-- <li>Поиск</li> -->
+    <li>
+      <mat-icon>search</mat-icon>
+    </li>
+    <li>
+      <mat-icon>input</mat-icon>
+    </li>
+    <li *ngIf="vp.mobile" (click)="menu.mobileOpened = !menu.mobileOpened">
+      <!-- TODO: Add custom icon with animations -->
+      <mat-icon>{{menu.mobileOpened ? 'clear' : 'menu'}}</mat-icon>
+    </li>
+  </menu>
+  <menu class="mobile basic-container" *ngIf="vp.mobile && menu.mobileOpened">
     <li>Абитуриенту</li>
     <li>Новости</li>
     <li>Структура</li>
-    <!-- <li>Поиск</li> -->
-    <li>Войти</li>
   </menu>
 </nav>
+<menu class="drop-down basic-container" [class.opened]="selectedItem">
+  Some points
+  <div>iimg</div>
+  some text
+  <button></button>
+</menu>

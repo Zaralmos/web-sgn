@@ -12,11 +12,8 @@ body {
 
 body {
     font-family: "Lava 3", serif;
-    font-size: var(--desktop-font-size);
+    font-size: var(--basic-font-size);
     overflow-y: auto;
-    @media (max-width: 850px) {
-        font-size: var(--mobile-font-size);
-    }
 }
 
 h1,
@@ -42,14 +39,14 @@ h3 {
 }
 
 .basic-container {
-    width: 100%;
     max-width: 1200px;
     margin: auto;
 }
 
 .container {
     @extend .basic-container;
-    padding: 0 1em;
+    width: 100%;
+    padding: 0 var(--double-padding);
 }
 
 sgn-root {

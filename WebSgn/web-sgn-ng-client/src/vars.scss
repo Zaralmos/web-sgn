@@ -6,10 +6,18 @@
     --primary-color: rgb(53, 242, 255);
     --second-color: rgb(66, 255, 176);
     --single-padding: 20px;
-    --double-padding: 40px;
-    --desktop-font-size: 16px;
-    --mobile-font-size: 11px;
+    --double-padding: 60px;
+    --basic-font-size: 16px;
     --h3-font-size: 1.618em;
     --h2-font-size: 2.618em;
     --h1-font-size: 4.236em;
+    --shadow: 0px 15px 35px #00000035;
+    @media (max-width: 850px) {
+        --basic-font-size: 11px;
+        --h3-font-size: 1.5em;
+        --h2-font-size: 2em;
+        --h1-font-size: 3em;
+        --single-padding: 5px;
+        --double-padding: 10px;
+    }
 }
