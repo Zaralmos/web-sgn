@@ -1,9 +1,12 @@
 import 'hammerjs';
+import * as AOS from 'aos';
 import { enableProdMode } from '@angular/core';
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 
 import { AppModule } from './app/app-module/app.module';
 import { environment } from './environments/environment';
+
+AOS.init();
 
 if (environment.production) {
   enableProdMode();
