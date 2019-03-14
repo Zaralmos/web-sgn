@@ -3,7 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { HomePageComponent } from '../home/components/home-page/home-page.component';
 
 const routes: Routes = [
-  { path: 'enrollee', loadChildren: './../enrollee/enrollee.module#EnrolleeModule' },
+  // { path: 'enrollee', loadChildren: './../enrollee/enrollee.module#EnrolleeModule' },
   // { path: 'news', loadChildren: './../enrollee/enrollee.module#EnrolleeModule' },
   // { path: '', loadChildren: './../home/home.module#HomeModule' },
   { path: '**', redirectTo: '' }

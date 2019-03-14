@@ -12,7 +12,7 @@ import { CoreModule } from '../core/core.module';
   declarations: [NewsItemComponent, NewsSectionComponent, NewsItemPageComponent, NewsSearchPageComponent],
   imports: [
     CommonModule,
-    CoreModule
+    CoreModule,
   ],
   exports: [NewsItemComponent, NewsSectionComponent],
   providers: [NewsProviderService]

@@ -7,6 +7,7 @@ export interface NewsItem {
     departmentsIds: number[];
     articleId: number;
 
+    photoUrl: string;
     title: string;
     articleJson: string;
     authorName: string;

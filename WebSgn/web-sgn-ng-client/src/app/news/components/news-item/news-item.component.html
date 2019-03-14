@@ -1,1 +1,4 @@
-{{newsItem.title}}
+<div [style.background-image]="'url(\'' + newsItem.photoUrl + '\')' | sanitize">
+    {{newsItem.title}}
+
+</div>

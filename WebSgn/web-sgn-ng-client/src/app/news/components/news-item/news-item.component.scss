@@ -1,4 +1,7 @@
 :host {
     // max-width: 300px;
     border: 1px solid black;
+    display: flex;
+    justify-content: stretch;
+    align-items: stretch;
 }

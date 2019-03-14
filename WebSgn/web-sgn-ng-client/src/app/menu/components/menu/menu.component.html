@@ -1,7 +1,7 @@
 <nav [class.on-top]="menu.transparentAtTop && scroll.onTop && !menu.mobileOpened"
   [class.mobile-opened]="vp.mobile && menu.mobileOpened">
   <menu class="main basic-container">
-    <div class="logo" [class.on-top]="scroll.onTop"><img src="/assets/img/logo.png"> СГН</div>
+    <a class="logo unstyled" href="/" [class.on-top]="scroll.onTop"><img src="/assets/img/logo.png"> СГН</a>
     <ng-container *ngIf="vp.desktop">
       <div class="menu-item" (mouseenter)="onEnter('enrollee')" [class.selected]="selectedItem == 'enrollee'">
         Абитуриенту</div>
@@ -19,7 +19,7 @@
       <!-- <div>
         <mat-icon>input</mat-icon>
       </div> -->
-      <div class="menu-item" *ngIf="vp.mobile" (divck)="menu.mobileOpened = !menu.mobileOpened">
+      <div class="menu-item" *ngIf="vp.mobile" (click)="menu.mobileOpened = !menu.mobileOpened">
         <!-- TODO: Add custom icon with animations -->
         <mat-icon>{{menu.mobileOpened ? 'clear' : 'menu'}}</mat-icon>
       </div>
