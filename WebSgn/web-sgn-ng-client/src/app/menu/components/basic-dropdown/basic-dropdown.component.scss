@@ -9,12 +9,17 @@
 menu {
     display: flex;
     flex-direction: column;
+    justify-content: flex-start;
     a {
-        font-family: 'Formular';
-        font-size: var(--h3-font-size);
+        flex: none;
+        font-family: 'Formular'; // font-size: var(--h3-font-size);
+        padding: var(--single-padding);
+        transition: var(--transition);
+        border-left: 2px solid transparent;
         &.selected {
             transform: translateX(var(--single-padding));
-            border-left: 2px solid var(--primary-color);
+            border-left-color: var(--primary-color);
+            color: var(--title-color);
         }
     }
 }
@@ -22,6 +27,7 @@ menu {
 .info {
     display: flex;
     flex-direction: column; // align-items: flex-end;
+    padding-left: var(--single-padding);
     .cta {
         flex: none;
         display: flex;

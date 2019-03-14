@@ -25,10 +25,17 @@ menu.main {
         display: flex;
         align-items: center;
         padding: var(--single-padding);
-        cursor: pointer; // transition: var(--transition);
+        font-family: 'Formular';
+        cursor: pointer;
+        transition: var(--transition);
+        color: var(--bg-color);
         &.selected {
             background: var(--bg-color);
             color: var(--title-color);
+        }
+        &:hover {
+            // background: var(--gradient); // transform: scale(1.2);
+            background: var(--primary-color); // transform: scale(1.2);
         }
     }
     div.logo {

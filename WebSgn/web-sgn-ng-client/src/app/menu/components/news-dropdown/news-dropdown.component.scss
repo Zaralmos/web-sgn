@@ -1,3 +1,16 @@
 :host {
     display: flex;
+    padding: var(--single-padding);
+    * {
+        flex: 1 0 33.34%;
+    }
+}
+
+.decription {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    .button-wrapper {
+        flex: none;
+    }
 }

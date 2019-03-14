@@ -1,3 +1,9 @@
-<p>
-  news-dropdown works!
-</p>
+<div class="decription">
+  <p>
+    У нас на факультете постоянно происходит что-то интересное. Будь в курсе событий - следи за нашими новостями.
+  </p>
+  <div class="button-wrapper">
+    <button>Смотреть все новости</button>
+  </div>
+</div>
+<sgn-news-item *ngFor="let news of news" [newsItem]="news"></sgn-news-item>

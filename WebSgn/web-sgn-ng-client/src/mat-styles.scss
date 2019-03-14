@@ -1,0 +1,19 @@
+@import '~@angular/material/theming';
+@include mat-core();
+$sgn-blue: ( 50: var(--primary-color), 100: var(--primary-color), 200: var(--primary-color), 300: var(--primary-color), 400: var(--primary-color), 500: var(--primary-color), 600: var(--primary-color), 700: var(--primary-color), 800: var(--primary-color), 900: var(--primary-color), A100: var(--primary-color), A200: var(--primary-color), A400: var(--primary-color), A700: var(--primary-color), contrast: ( 50: white, 100: white, 200: white, 300: white, 400: white, 500: white, 600: white, 700: white, 800: white, 900: white, A100: white, A200: white, A400: white, A700: white, ));
+// below creates a primary palette with three shades of blue
+$sgn-primary: mat-palette($sgn-blue, 100, 50, 200);
+// $sgn-primary: 'var(--primary-color)';
+// $sgn-accent: 'var(--second-color)';
+// The warn palette is optional (defaults to red
+// $sgn-warn: 'var(--error-color)'; //mat-palette($mat-red);
+// Create the theme object (a Sass map containing all of the palettes).
+// $sgn-primary: mat-palette($mat-indigo);
+$sgn-accent: mat-palette($mat-pink, A200, A100, A400);
+// The warn palette is optional (defaults to red).
+$sgn-warn: mat-palette($mat-red);
+$sgn-theme: mat-light-theme($sgn-primary, $sgn-accent, $sgn-warn);
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+@include angular-material-theme($sgn-theme);

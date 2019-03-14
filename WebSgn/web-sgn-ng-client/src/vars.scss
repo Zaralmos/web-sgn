@@ -1,10 +1,11 @@
 :root {
-    --title-color: black;
+    --title-color: rgb(41, 41, 41);
     --text-color: gray;
     --alt-text-color: lightgray;
     --bg-color: white;
     --primary-color: rgb(53, 242, 255);
     --second-color: rgb(66, 255, 176);
+    --error-color: rgb(255, 66, 66);
     --single-padding: 20px;
     --double-padding: 60px;
     --basic-font-size: 16px;
@@ -13,6 +14,7 @@
     --h1-font-size: 4.236em;
     --shadow: 0px 15px 35px #00000035;
     --transition: .3s ease-out;
+    --gradient: linear-gradient(123deg, var(--primary-color), var(--second-color));
     @media (max-width: 850px) {
         --basic-font-size: 11px;
         --h3-font-size: 1.5em;

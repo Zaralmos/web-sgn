@@ -12,7 +12,8 @@
     <!-- <div>Поиск</div> -->
     <div class="icons">
 
-      <a class="menu-item" href="/search" (mouseenter)="onEnter('search')" [class.selected]="selectedItem == 'search'">
+      <a class="menu-item unstyled" href="/search" (mouseenter)="onEnter('search')"
+        [class.selected]="selectedItem == 'search'">
         <mat-icon>search</mat-icon>
       </a>
       <!-- <div>
@@ -33,7 +34,8 @@
 <menu class="drop-down basic-container" [class.opened]="selectedItem" [ngSwitch]="selectedItem">
   <sgn-basic-dropdown class="fade-in" *ngSwitchCase="'enrollee'" [items]="enrolleeSubmenuItems"></sgn-basic-dropdown>
   <sgn-news-dropdown class="fade-in" *ngSwitchCase="'news'"></sgn-news-dropdown>
-  <sgn-basic-dropdown class="fade-in" *ngSwitchCase="'departments'"></sgn-basic-dropdown>
+  <sgn-basic-dropdown class="fade-in" *ngSwitchCase="'departments'" [items]="departmentsSubmenuItems">
+  </sgn-basic-dropdown>
   <sgn-search-dropdown class="fade-in" *ngSwitchCase="'search'"></sgn-search-dropdown>
   <sgn-basic-dropdown class="fade-in" *ngSwitchCase="'sign-in'"></sgn-basic-dropdown>
   <!-- Some points
