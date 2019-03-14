@@ -8,6 +8,7 @@ import { MenuModule } from '../menu/menu.module';
 import { HomeModule } from '../home/home.module';
 import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemoryWebApiService } from '../shared/mocks/in-memory-web-api.service';
+import { SearchModule } from '../search/search.module';
 
 @NgModule({
   declarations: [
@@ -17,6 +18,7 @@ import { InMemoryWebApiService } from '../shared/mocks/in-memory-web-api.service
     BrowserModule,
     BrowserAnimationsModule,
     MenuModule,
+    SearchModule,
     HomeModule,
 
     AppRoutingModule,

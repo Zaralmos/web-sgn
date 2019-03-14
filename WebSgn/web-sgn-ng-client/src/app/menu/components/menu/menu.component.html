@@ -1,33 +1,43 @@
-<nav [class.on-top]="menu.transparentAtTop && scroll.scrollTop < 10 && !menu.mobileOpened"
+<nav [class.on-top]="menu.transparentAtTop && scroll.onTop && !menu.mobileOpened"
   [class.mobile-opened]="vp.mobile && menu.mobileOpened">
   <menu class="main basic-container">
-    <li class="logo" [class.on-top]="scroll.scrollTop < 10">СГН</li>
+    <div class="logo" [class.on-top]="scroll.onTop"><img src="/assets/img/logo.png"> СГН</div>
     <ng-container *ngIf="vp.desktop">
-      <li (mouseenter)="onEnter('enrollee')">Абитуриенту</li>
-      <li>Новости</li>
-      <li>Структура</li>
+      <div class="menu-item" (mouseenter)="onEnter('enrollee')" [class.selected]="selectedItem == 'enrollee'">
+        Абитуриенту</div>
+      <div class="menu-item" (mouseenter)="onEnter('news')" [class.selected]="selectedItem == 'news'">Новости</div>
+      <div class="menu-item" (mouseenter)="onEnter('departments')" [class.selected]="selectedItem == 'departments'">
+        Структура</div>
     </ng-container>
-    <!-- <li>Поиск</li> -->
-    <li>
-      <mat-icon>search</mat-icon>
-    </li>
-    <li>
-      <mat-icon>input</mat-icon>
-    </li>
-    <li *ngIf="vp.mobile" (click)="menu.mobileOpened = !menu.mobileOpened">
-      <!-- TODO: Add custom icon with animations -->
-      <mat-icon>{{menu.mobileOpened ? 'clear' : 'menu'}}</mat-icon>
-    </li>
+    <!-- <div>Поиск</div> -->
+    <div class="icons">
+
+      <a class="menu-item" href="/search" (mouseenter)="onEnter('search')" [class.selected]="selectedItem == 'search'">
+        <mat-icon>search</mat-icon>
+      </a>
+      <!-- <div>
+        <mat-icon>input</mat-icon>
+      </div> -->
+      <div class="menu-item" *ngIf="vp.mobile" (divck)="menu.mobileOpened = !menu.mobileOpened">
+        <!-- TODO: Add custom icon with animations -->
+        <mat-icon>{{menu.mobileOpened ? 'clear' : 'menu'}}</mat-icon>
+      </div>
+    </div>
   </menu>
-  <menu class="mobile basic-container" *ngIf="vp.mobile && menu.mobileOpened">
-    <li>Абитуриенту</li>
-    <li>Новости</li>
-    <li>Структура</li>
-  </menu>
+  <!-- <menu class="mobile basic-container" *ngIf="vp.mobile && menu.mobileOpened">
+    <div>Абитуриенту</div>
+    <div>Новости</div>
+    <div>Структура</div>
+  </menu> -->
 </nav>
-<menu class="drop-down basic-container" [class.opened]="selectedItem">
-  Some points
+<menu class="drop-down basic-container" [class.opened]="selectedItem" [ngSwitch]="selectedItem">
+  <sgn-basic-dropdown class="fade-in" *ngSwitchCase="'enrollee'" [items]="enrolleeSubmenuItems"></sgn-basic-dropdown>
+  <sgn-news-dropdown class="fade-in" *ngSwitchCase="'news'"></sgn-news-dropdown>
+  <sgn-basic-dropdown class="fade-in" *ngSwitchCase="'departments'"></sgn-basic-dropdown>
+  <sgn-search-dropdown class="fade-in" *ngSwitchCase="'search'"></sgn-search-dropdown>
+  <sgn-basic-dropdown class="fade-in" *ngSwitchCase="'sign-in'"></sgn-basic-dropdown>
+  <!-- Some points
   <div>iimg</div>
   some text
-  <button></button>
+  <button></button> -->
 </menu>

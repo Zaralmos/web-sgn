@@ -2,6 +2,8 @@
 
 @import "/vars.scss";
 @import "/font-faces.scss";
+@import "/animations.scss";
+@import "/ui-kit.scss";
 html,
 body {
     height: 100%;
@@ -10,32 +12,16 @@ body {
     margin: 0;
 }
 
+menu {
+    padding: 0;
+    margin: 0;
+}
+
 body {
     font-family: "Lava 3", serif;
     font-size: var(--basic-font-size);
     overflow-y: auto;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-    font-family: 'Formular', sans-serif;
-    font-weight: bold;
-}
-
-h1 {
-    font-size: var(--h1-font-size)
-}
-
-h2 {
-    font-size: var(--h2-font-size)
-}
-
-h3 {
-    font-size: var(--h3-font-size)
+    animation: fade-in 1.5s cubic-bezier(0.895, 0.03, 0.685, 0.22);
 }
 
 .basic-container {
@@ -44,11 +30,15 @@ h3 {
 }
 
 .container {
-    @extend .basic-container;
+    @extend .basic-container; // box-sizing: border-box;
     width: 100%;
     padding: 0 var(--double-padding);
 }
 
 sgn-root {
     width: 100%;
+}
+
+.fade-in {
+    animation: fade-in var(--transition);
 }

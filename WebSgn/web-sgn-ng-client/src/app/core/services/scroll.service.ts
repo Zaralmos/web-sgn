@@ -11,6 +11,10 @@ export class ScrollService {
     return this.body && this.body.scrollTop || 0;
   }
 
+  public get onTop() {
+    return this.scrollTop < 10;
+  }
+
   public readonly scrollTopChanged: EventEmitter<number> = new EventEmitter();
 
   constructor() {

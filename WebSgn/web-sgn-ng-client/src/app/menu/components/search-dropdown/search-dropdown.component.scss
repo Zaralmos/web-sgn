@@ -1,0 +1,10 @@
+:host {
+    display: flex;
+    padding: var(--single-padding);
+    input {
+        flex: 1 1 auto;
+    }
+    button {
+        flex: none;
+    }
+}

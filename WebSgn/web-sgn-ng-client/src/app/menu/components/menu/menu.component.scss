@@ -21,17 +21,19 @@ menu.main {
     align-items: stretch;
     list-style-type: none;
     color: var(--bg-color);
-    li {
+    .menu-item {
         display: flex;
         align-items: center;
         padding: var(--single-padding);
-        &:not(.logo):hover {
+        cursor: pointer; // transition: var(--transition);
+        &.selected {
             background: var(--bg-color);
             color: var(--title-color);
         }
     }
-    li.logo {
-        // padding-left: var(--double-padding);
+    div.logo {
+        display: flex;
+        align-items: center; // padding-left: var(--double-padding);
         padding-left: 0;
         transition-duration: .5s;
         font-size: var(--h3-font-size);
@@ -39,19 +41,31 @@ menu.main {
         &.on-top {
             font-size: var(--h1-font-size);
         }
+        &:hover {
+            transform: scale(1.12);
+        }
+        img {
+            margin-right: var(--single-padding); // height: 20px;
+            // transition-duration: .5s;
+            height: 0.8em; // height: 80px;
+        }
+    }
+    .icons {
+        display: flex;
+        align-items: stretch;
     }
 }
 
 menu.drop-down {
-    display: flex;
-    min-height: 200px; // opacity: 0;
-    transform: translateY(-100%);
+    // display: none;
+    // min-height: 200px; // opacity: 0;
+    // transform: translateY(-100%);
     background: var(--bg-color);
     transition-duration: .5s;
     box-shadow: var(--shadow);
     z-index: 100;
     &.opened {
-        opacity: 1;
-        transform: translateY(0);
+        // display: flex; // opacity: 1;
+        // transform: translateY(0);
     }
 }

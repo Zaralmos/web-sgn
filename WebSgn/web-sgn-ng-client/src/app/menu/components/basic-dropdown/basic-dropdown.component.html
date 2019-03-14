@@ -1,0 +1,16 @@
+<menu>
+  <a class="unstyled" *ngFor="let item of items" [href]="item.link" (mouseenter)="onEnter(item)"
+    [class.selected]="item == selectedItem">{{item.name}}</a>
+</menu>
+<!-- <div class="image" style="background-image: url('{{selectedItem.photoUrl}}')"></div> -->
+<div class="image"
+  style="background-image: url('https://images.pexels.com/photos/1024975/pexels-photo-1024975.jpeg?cs=srgb&dl=affair-anniversary-asad-1024975.jpg&fm=jpg')">
+</div>
+<div class="info">
+  <div class="description">
+    {{selectedItem.description}}
+  </div>
+  <div class="cta">
+    <button>{{selectedItem.cta}}</button>
+  </div>
+</div>

@@ -1,0 +1,33 @@
+:host {
+    display: flex; // justify-content: stretch; // align-items: stretch;
+    padding: var(--single-padding);
+    * {
+        flex: 1 1 33.34%;
+    }
+}
+
+menu {
+    display: flex;
+    flex-direction: column;
+    a {
+        font-family: 'Formular';
+        font-size: var(--h3-font-size);
+        &.selected {
+            transform: translateX(var(--single-padding));
+            border-left: 2px solid var(--primary-color);
+        }
+    }
+}
+
+.info {
+    display: flex;
+    flex-direction: column; // align-items: flex-end;
+    .cta {
+        flex: none;
+        display: flex;
+        justify-content: flex-end;
+        button {
+            flex: none;
+        }
+    }
+}
