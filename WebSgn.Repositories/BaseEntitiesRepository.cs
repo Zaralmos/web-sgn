@@ -160,6 +160,18 @@ namespace WebSgn.Repositories
             }
         }
 
+        public async Task<Person> GetPerson(int id)
+        {
+            try
+            {
+                return await dbContext.Persons.FindAsync(id);
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+
         public async Task<List<Person>> GetPersons(SearchParameters parametrs)
         {
             try

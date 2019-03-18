@@ -23,6 +23,7 @@ namespace WebSgn.Repositories
         Task<bool> RemoveNewsItem(int id);
         Task UpdateNewsItem(int id, NewsItem source);
 
+        Task<Person> GetPerson(int id);
         Task<List<Person>> GetPersons(SearchParameters parametrs);
         Task<Person> AddPerson(Person person, string articleName = null);
         Task<bool> RemovePerson(int id);
