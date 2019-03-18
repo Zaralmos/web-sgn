@@ -19,5 +19,13 @@ namespace WebSgn.Models
         public string ArticleJson { get; set; }
 
         public string Name { get; set; }
+
+        public DepartmentSection Update(DepartmentSection source)
+        {
+            DepartmentId = source.DepartmentId;
+            ArticleId = source.ArticleId;
+            Name = source.Name;
+            return this;
+        }
     }
 }

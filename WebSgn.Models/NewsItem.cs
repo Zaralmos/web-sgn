@@ -20,8 +20,10 @@ namespace WebSgn.Models
         public int ArticleId { get; set; }
         [JsonIgnore]
         public Article Article { get; set; }
+        [NotMapped]
+        public string ArticleJson { get; set; }
 
-        public string Titile { get; set; }
+        public string Title { get; set; }
 
         public DateTime Published { get; set; }
 
@@ -39,5 +41,19 @@ namespace WebSgn.Models
         public NewsType Type { get; set; }
 
         public DateTime AnnouncedTime { get; set; }
+
+        public NewsItem Update(NewsItem source)
+        {
+            UserId = source.UserId;
+            ArticleId = source.ArticleId;
+            Title = source.Title;
+            Published = source.Published;
+            IsWip = source.IsWip;
+            TagsString = source.TagsString;
+            ViewCount = source.ViewCount;
+            Type = source.Type;
+            AnnouncedTime = source.AnnouncedTime;
+            return this;
+        }
     }
 }

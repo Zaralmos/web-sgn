@@ -20,7 +20,7 @@ namespace WebSgn.Models
 
         public bool IsApplicable { get; set; }
 
-        public string Photo { get; set; }
+        public string Phone { get; set; }
 
         public string Email { get; set; }
 
@@ -32,6 +32,18 @@ namespace WebSgn.Models
 
         [JsonIgnore]
         public ICollection<Person> Persons { get; set; }
+
+        public Department Update(Department source)
+        {
+            Name = source.Name;
+            Description = source.Description;
+            PhotoUrl = source.PhotoUrl;
+            Location = source.Location;
+            IsApplicable = source.IsApplicable;
+            Phone = source.Phone;
+            Email = source.Email;
+            return this;
+        }
 
     }
 }

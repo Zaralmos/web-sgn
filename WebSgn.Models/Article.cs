@@ -11,5 +11,12 @@ namespace WebSgn.Models
         public string Name { get; set; }
 
         public string ContentJson { get; set; }
+
+        public Article Update(Article source)
+        {
+            Name = source.Name;
+            ContentJson = source.ContentJson;
+            return this;
+        }
     }
 }

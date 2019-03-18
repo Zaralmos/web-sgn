@@ -33,7 +33,7 @@ namespace WebSgn.Models
 
         public DateTime Birthday { get; set; }
 
-        public string DisciplinesString{ get; set; }
+        public string DisciplinesString { get; set; }
 
         public string PersonalPageUrl { get; set; }
 
@@ -45,5 +45,25 @@ namespace WebSgn.Models
 
         public string VkUrl { get; set; }
         public bool ShowVk { get; set; }
+
+        public Person Update(Person source)
+        {
+            ArticleId = source.ArticleId;
+            FullName = source.FullName;
+            PhotoUrl = source.PhotoUrl;
+            Position = source.Position;
+            AcademicStatus = source.AcademicStatus;
+            Description = source.Description;
+            Birthday = source.Birthday;
+            DisciplinesString = source.DisciplinesString;
+            PersonalPageUrl = source.PersonalPageUrl;
+            Email = source.Email;
+            ShowEmail = source.ShowEmail;
+            Phone = source.Phone;
+            ShowPhone = source.ShowPhone;
+            VkUrl = source.VkUrl;
+            ShowVk = source.ShowVk;
+            return this;
+        }
     }
 }
