@@ -11,6 +11,7 @@ using System;
 using WebSgn.Database;
 using WebSgn.Models.Users;
 using WebSgn.Models.Users.Roles;
+using WebSgn.Repositories;
 
 namespace WebSgn
 {
@@ -50,6 +51,8 @@ namespace WebSgn
             {
                 configuration.RootPath = "ClientApp/dist";
             });
+
+            services.AddBaseRepository();
         }
 
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)

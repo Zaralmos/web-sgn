@@ -5,8 +5,13 @@ using System.Text;
 
 namespace WebSgn.Models.Users.Roles
 {
-    public class WebSgnRoleBase : IdentityRole<int>
+    public abstract class WebSgnRoleBase : IdentityRole<int>
     {
-        
+        public WebSgnRoleBase(string roleName) : base(roleName)
+        {
+
+        }
+
+        public abstract RoleType Type { get; }
     }
 }

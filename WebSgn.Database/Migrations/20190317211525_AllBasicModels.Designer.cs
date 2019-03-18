@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using WebSgn.Database;
 
 namespace WebSgn.Database.Migrations
 {
     [DbContext(typeof(WebSgnDbContext))]
-    partial class WebSgnDbContextModelSnapshot : ModelSnapshot
+    [Migration("20190317211525_AllBasicModels")]
+    partial class AllBasicModels
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -353,9 +355,6 @@ namespace WebSgn.Database.Migrations
                     b.Property<string>("ConcurrencyStamp")
                         .IsConcurrencyToken();
 
-                    b.Property<string>("Discriminator")
-                        .IsRequired();
-
                     b.Property<string>("Name")
                         .HasMaxLength(256);
 
@@ -370,8 +369,6 @@ namespace WebSgn.Database.Migrations
                         .HasFilter("[NormalizedName] IS NOT NULL");
 
                     b.ToTable("AspNetRoles");
-
-                    b.HasDiscriminator<string>("Discriminator").HasValue("WebSgnRoleBase");
                 });
 
             modelBuilder.Entity("WebSgn.Models.Users.WebSgnUser", b =>
@@ -447,20 +444,6 @@ namespace WebSgn.Database.Migrations
                     b.HasIndex("WebSgnUserId");
 
                     b.ToTable("WebSgnUsersDepartments");
-                });
-
-            modelBuilder.Entity("WebSgn.Models.Users.Roles.WebSgnAdminRole", b =>
-                {
-                    b.HasBaseType("WebSgn.Models.Users.Roles.WebSgnRoleBase");
-
-                    b.HasDiscriminator().HasValue("WebSgnAdminRole");
-                });
-
-            modelBuilder.Entity("WebSgn.Models.Users.Roles.WebSgnModerRole", b =>
-                {
-                    b.HasBaseType("WebSgn.Models.Users.Roles.WebSgnRoleBase");
-
-                    b.HasDiscriminator().HasValue("WebSgnModerRole");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<int>", b =>

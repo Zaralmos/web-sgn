@@ -26,6 +26,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\WebSgn.Database\WebSgn.Database.csproj" />
+    <ProjectReference Include="..\WebSgn.Repositories\WebSgn.Repositories.csproj" />
   </ItemGroup>
 
   <Target Name="DebugEnsureNodeEnv" BeforeTargets="Build" Condition=" '$(Configuration)' == 'Debug' And !Exists('$(SpaRoot)node_modules') ">
