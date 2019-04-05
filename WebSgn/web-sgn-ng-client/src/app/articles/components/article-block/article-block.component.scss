@@ -1,0 +1,35 @@
+:host {
+    display: flex;
+
+    :nth-child(2) {
+        flex: auto;
+    }
+}
+
+sgn-article-block {
+    flex: auto;
+}
+
+.left,
+.right {
+    display: flex;
+    flex-direction: column;
+    flex: none;
+    align-items: center;
+    text-align: center;
+
+    mat-icon {
+        flex: none;
+    }
+
+    .line {
+        flex: auto;
+        margin-top: 10px;
+        width: 2px;
+        background: var(--primary-color);
+    }
+}
+
+.left {
+    margin-right: var(--single-padding);
+}

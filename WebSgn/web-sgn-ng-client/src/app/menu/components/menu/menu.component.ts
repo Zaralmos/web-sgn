@@ -68,7 +68,7 @@ export class MenuComponent implements OnInit {
       cta: 'Смотреть календарь',
     },
     {
-      name: 'СГН3 Кафедра информационной аналитики',
+      name: 'СГН3 Кафедра информационной аналитики и политических технологий',
       photoUrl: 'https://www.gold.ac.uk/media/images-by-section/study/postgraduate/fees-and-funding/Street-art-in-London_1913.jpg',
       description: 'lorem ipsum dolorsit amet',
       link: '/enrollee/calendar',

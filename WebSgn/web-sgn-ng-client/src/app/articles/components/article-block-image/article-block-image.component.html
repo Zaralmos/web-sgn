@@ -1,0 +1,9 @@
+<mat-form-field [floatLabel]="'never'">
+  <textarea matInput rows="1" cdkTextareaAutosize #autosize="cdkTextareaAutosize" cdkAutosizeMinRows="1"
+    [(ngModel)]="block.link" placeholder="Вставьте URL изображения..."></textarea>
+</mat-form-field>
+<img src="{{block.link}}">
+<mat-form-field [floatLabel]="'never'">
+  <textarea matInput rows="1" cdkTextareaAutosize #autosize="cdkTextareaAutosize" cdkAutosizeMinRows="1"
+    [(ngModel)]="block.text" placeholder="Введите подпись к изображению..."></textarea>
+</mat-form-field>

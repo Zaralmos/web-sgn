@@ -1,0 +1,14 @@
+.list-item {
+    display: flex;
+    flex-direction: row;
+}
+
+sgn-article-block {
+    flex: auto;
+}
+
+.actions {
+    display: flex;
+    flex-direction: column;
+    flex: none;
+}

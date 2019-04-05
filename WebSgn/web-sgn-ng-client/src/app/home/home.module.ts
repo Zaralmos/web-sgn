@@ -6,6 +6,7 @@ import { HomePageComponent } from './components/home-page/home-page.component';
 import { NewsModule } from '../news/news.module';
 import { MaterialImportsModule } from '../material-imports/material-imports.module';
 import { CoreModule } from '../core/core.module';
+import { ArticlesModule } from '../articles/articles.module';
 
 
 @NgModule({
@@ -16,6 +17,7 @@ import { CoreModule } from '../core/core.module';
     MaterialImportsModule,
     NewsModule,
     HomeRoutingModule,
+    ArticlesModule
   ],
   exports: [HomePageComponent]
 })

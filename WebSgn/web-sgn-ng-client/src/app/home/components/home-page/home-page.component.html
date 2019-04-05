@@ -1,10 +1,21 @@
+<audio src="/assets/sounds/bass.mp3" autoplay="" preload="auto"></audio>
 <section class="video-header">
-  <div class="container">
+  <video class="is-hidden--sm-down" preload="none" playsinline="" autoplay="" muted="" loop=""
+    poster="/assets/img/web-sgn-background-frame.jpg">
+    <source src="/assets/videos/web-sgn-background-minified.mp4" type="video/mp4">
+  </video>
+  <div class="container video-overlay">
     <h1>
       Социальные <br>и гуманитарные науки
     </h1>
+    <p>МГТУ им. Н. Э. Баумана</p>
   </div>
 </section>
+<section class="container">
+  <sgn-article-editor></sgn-article-editor>
+</section>
+
+
 <section class="container">
   <h2>Новости</h2>
   <sgn-news-section></sgn-news-section>

@@ -1,0 +1,26 @@
+<!-- <div cdkDropList class="example-list" (cdkDropListDropped)="drop($event)"> -->
+<div cdkDropList class="example-list">
+    <div class="drag-item list-item" *ngFor="let block of article.blocks; index as i; first as isFirst; last as isLast">
+        <sgn-article-block class="example-box" [block]="block" [editingEnabled]="editingEnabled">{{block}}
+        </sgn-article-block>
+        <div class="actions">
+            <button mat-icon-button (click)="onDelete(block)">
+                <mat-icon>clear</mat-icon>
+            </button>
+            <button mat-icon-button *ngIf="!isFirst" (click)="sendUp(i)">
+                <mat-icon>arrow_drop_up</mat-icon>
+            </button>
+            <button mat-icon-button *ngIf="!isLast" (click)="sendDown(i)">
+                <mat-icon>arrow_drop_down</mat-icon>
+            </button>
+            <!-- TODO: Repair drag and drop move. -->
+            <!-- <button mat-icon-button>
+                <mat-icon cdkDragHandle>drag_indicator</mat-icon>
+            </button> -->
+        </div>
+    </div>
+    <mat-button-toggle-group>
+        <mat-button-toggle (click)="onAddBlock('title')">Заголовок</mat-button-toggle>
+        <mat-button-toggle (click)="onAddBlock('text')">Текст</mat-button-toggle>
+        <mat-button-toggle (click)="onAddBlock('image')">Изображение</mat-button-toggle>
+    </mat-button-toggle-group>

@@ -1,8 +1,13 @@
-:host {
-    display: flex;
-    flex-direction: column;
-    align-items: stretch;
+:host,
+:host .page-wrapper {
     position: relative;
+
+    &,
+    .page-wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+    }
 }
 
 sgn-menu {
@@ -11,4 +16,5 @@ sgn-menu {
     left: 0;
     right: 18px;
     max-width: 100%;
+    z-index: 1000;
 }
