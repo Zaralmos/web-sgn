@@ -33,4 +33,18 @@
             font-size: var(--h3-font-size);
         }
     }
+
+    a.scroll-button {
+        z-index: 1;
+        position: absolute;
+        bottom: calc(var(--double-padding)*2);
+        left: 50%;
+        padding: var(--single-padding) var(--double-padding);
+        border: 1px solid var(--bg-color);
+        color: var(--bg-color);
+
+        &:hover {
+            background: var(--bg-color);
+        }
+    }
 }

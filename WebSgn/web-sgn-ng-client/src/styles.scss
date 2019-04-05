@@ -23,6 +23,7 @@ body {
     font-family: "Lava 3", serif;
     font-size: var(--basic-font-size);
     overflow-y: auto;
+    scroll-behavior: smooth;
     animation: fade-in 1.5s cubic-bezier(0.895, 0.03, 0.685, 0.22);
 }
 
