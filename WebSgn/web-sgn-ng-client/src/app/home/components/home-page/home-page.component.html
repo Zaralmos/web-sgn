@@ -15,8 +15,9 @@
   </a>
 </section>
 
-<section class="container" id="first-section">
-  <sgn-article-editor></sgn-article-editor>
+<section class="basic-container" id="first-section">
+  <mat-slide-toggle [(ngModel)]="edit">Edit mode</mat-slide-toggle>
+  <sgn-article-editor [edit]="edit"></sgn-article-editor>
 </section>
 
 

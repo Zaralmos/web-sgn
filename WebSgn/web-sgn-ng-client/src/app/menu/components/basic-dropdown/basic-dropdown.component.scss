@@ -1,6 +1,7 @@
 :host {
     display: flex; // justify-content: stretch; // align-items: stretch;
     padding: var(--single-padding);
+
     * {
         flex: 1 1 33.34%;
     }
@@ -10,12 +11,14 @@ menu {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
+
     a {
         flex: none;
         font-family: 'Formular'; // font-size: var(--h3-font-size);
         padding: var(--single-padding);
         transition: var(--transition);
         border-left: 2px solid transparent;
+
         &.selected {
             transform: translateX(var(--single-padding));
             border-left-color: var(--primary-color);
@@ -28,12 +31,18 @@ menu {
     display: flex;
     flex-direction: column; // align-items: flex-end;
     padding-left: var(--single-padding);
+
     .cta {
         flex: none;
         display: flex;
         justify-content: flex-end;
+
         button {
             flex: none;
         }
     }
+}
+
+.image {
+    background-size: cover;
 }

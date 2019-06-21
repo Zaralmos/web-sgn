@@ -12,6 +12,9 @@ export class ArticleBlockImageComponent implements OnInit {
   @Input()
   public block!: ArticleBlockComponent;
 
+  @Input()
+  public edit = false;
+
   constructor() { }
 
   ngOnInit() {

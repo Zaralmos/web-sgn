@@ -1,6 +1,6 @@
 :host {
     max-height: 100vh;
-    overflow-y: auto;
+    // overflow-y: auto;
 }
 
 nav {
@@ -11,9 +11,11 @@ nav {
     background: var(--title-color);
     transition-duration: .5s;
     z-index: 101;
+
     &.on-top {
         background: transparent;
     }
+
     &.mobile-opened {
         height: 100vh;
     }
@@ -26,9 +28,11 @@ menu.main {
     align-items: stretch;
     list-style-type: none;
     color: var(--bg-color);
+
     a {
         color: var(--bg-color);
     }
+
     .menu-item {
         display: flex;
         align-items: center;
@@ -36,15 +40,18 @@ menu.main {
         font-family: 'Formular';
         cursor: pointer;
         transition: var(--transition);
+
         &.selected {
             background: var(--bg-color);
             color: var(--title-color);
         }
+
         &:hover {
             // background: var(--gradient); // transform: scale(1.2);
             background: var(--primary-color); // transform: scale(1.2);
         }
     }
+
     .logo {
         display: flex;
         align-items: center; // padding-left: var(--double-padding);
@@ -52,18 +59,23 @@ menu.main {
         transition-duration: .5s;
         font-size: var(--h3-font-size);
         font-weight: bold;
+
         &.on-top {
             font-size: var(--h1-font-size);
+            margin-top: var(--single-padding);
         }
+
         &:hover {
             transform: scale(1.12);
         }
+
         img {
             margin-right: var(--single-padding); // height: 20px;
             // transition-duration: .5s;
             height: 0.8em; // height: 80px;
         }
     }
+
     .icons {
         display: flex;
         align-items: stretch;
@@ -78,6 +90,7 @@ menu.drop-down {
     transition-duration: .5s;
     box-shadow: var(--shadow);
     z-index: 100;
+
     &.opened {
         // display: flex; // opacity: 1;
         // transform: translateY(0);

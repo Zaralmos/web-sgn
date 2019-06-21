@@ -14,6 +14,9 @@ export class ArticleBlockTitleComponent implements OnInit {
   @Input()
   public block!: ArticleBlockTitle;
 
+  @Input()
+  public edit = false;
+
   @ViewChild('autosize') autosize!: CdkTextareaAutosize;
   constructor(private ngZone: NgZone) { }
 

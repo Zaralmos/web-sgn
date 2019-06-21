@@ -7,6 +7,7 @@ import { NewsModule } from '../news/news.module';
 import { MaterialImportsModule } from '../material-imports/material-imports.module';
 import { CoreModule } from '../core/core.module';
 import { ArticlesModule } from '../articles/articles.module';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -17,7 +18,8 @@ import { ArticlesModule } from '../articles/articles.module';
     MaterialImportsModule,
     NewsModule,
     HomeRoutingModule,
-    ArticlesModule
+    ArticlesModule,
+    FormsModule
   ],
   exports: [HomePageComponent]
 })

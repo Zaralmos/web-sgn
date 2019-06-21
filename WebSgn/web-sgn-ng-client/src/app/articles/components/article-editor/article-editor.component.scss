@@ -1,6 +1,10 @@
 .list-item {
     display: flex;
     flex-direction: row;
+
+    &:focus-within {
+        background: var(--alt-text-color);
+    }
 }
 
 sgn-article-block {

@@ -1,4 +1,4 @@
-<div class="left">
+<div class="left" *ngIf="edit">
   <ng-container [ngSwitch]="block.type">
     <mat-icon *ngSwitchCase="'title'">title</mat-icon>
     <mat-icon *ngSwitchCase="'text'">notes</mat-icon>
@@ -7,8 +7,7 @@
   <div class="line"></div>
 </div>
 <ng-container [ngSwitch]="block.type">
-  <sgn-article-block-title *ngSwitchCase="'title'" [block]="block"></sgn-article-block-title>
-  <sgn-article-block-text *ngSwitchCase="'text'" [block]="block"></sgn-article-block-text>
-  <sgn-article-block-image *ngSwitchCase="'image'" [block]="block"></sgn-article-block-image>
+  <sgn-article-block-title *ngSwitchCase="'title'" [block]="block" [edit]="edit"></sgn-article-block-title>
+  <sgn-article-block-text *ngSwitchCase="'text'" [block]="block" [edit]="edit"></sgn-article-block-text>
+  <sgn-article-block-image *ngSwitchCase="'image'" [block]="block" [edit]="edit"></sgn-article-block-image>
 </ng-container>
-<div class="right"></div>

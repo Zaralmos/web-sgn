@@ -1,4 +1,8 @@
-<mat-form-field [floatLabel]="'never'">
+<mat-form-field [floatLabel]="'never'" *ngIf="edit">
   <textarea matInput rows="1" cdkTextareaAutosize #autosize="cdkTextareaAutosize" cdkAutosizeMinRows="1"
     [(ngModel)]="block.title" placeholder="Введите заголовок..." maxlength="100"></textarea>
 </mat-form-field>
+
+<h2 *ngIf="!edit">
+  {{block.title}}
+</h2>

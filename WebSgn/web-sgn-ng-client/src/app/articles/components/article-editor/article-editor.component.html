@@ -1,9 +1,9 @@
 <!-- <div cdkDropList class="example-list" (cdkDropListDropped)="drop($event)"> -->
 <div cdkDropList class="example-list">
     <div class="drag-item list-item" *ngFor="let block of article.blocks; index as i; first as isFirst; last as isLast">
-        <sgn-article-block class="example-box" [block]="block" [editingEnabled]="editingEnabled">{{block}}
+        <sgn-article-block class="example-box" [block]="block" [edit]="edit">{{block}}
         </sgn-article-block>
-        <div class="actions">
+        <div class="actions" *ngIf="edit">
             <button mat-icon-button (click)="onDelete(block)">
                 <mat-icon>clear</mat-icon>
             </button>
@@ -19,8 +19,14 @@
             </button> -->
         </div>
     </div>
-    <mat-button-toggle-group>
-        <mat-button-toggle (click)="onAddBlock('title')">Заголовок</mat-button-toggle>
-        <mat-button-toggle (click)="onAddBlock('text')">Текст</mat-button-toggle>
-        <mat-button-toggle (click)="onAddBlock('image')">Изображение</mat-button-toggle>
+    <mat-button-toggle-group *ngIf="edit">
+        <mat-button-toggle matTooltip="Добавить заголовок" (click)="onAddBlock('title')">
+            <mat-icon>title</mat-icon>
+        </mat-button-toggle>
+        <mat-button-toggle matTooltip="Добавить текст" (click)="onAddBlock('text')">
+            <mat-icon>notes</mat-icon>
+        </mat-button-toggle>
+        <mat-button-toggle matTooltip="Добавить изображение" (click)="onAddBlock('image')">
+            <mat-icon>insert_photo</mat-icon>
+        </mat-button-toggle>
     </mat-button-toggle-group>

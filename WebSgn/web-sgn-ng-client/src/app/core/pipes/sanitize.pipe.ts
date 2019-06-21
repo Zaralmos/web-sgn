@@ -11,8 +11,6 @@ export class SanitizePipe implements PipeTransform {
   ) { }
 
   transform(style: string) {
-    console.log('sanitized', style);
-
     return this.sanitizer.bypassSecurityTrustStyle(style);
   }
 

@@ -1,4 +1,4 @@
-import { Component, OnInit, HostListener } from '@angular/core';
+import { Component, OnInit, HostListener, ElementRef, AfterViewInit } from '@angular/core';
 import { ViewportService } from 'src/app/core/services/viewport.service';
 import { ScrollService } from 'src/app/core/services/scroll.service';
 import { MenuService } from '../../services/menu.service';
@@ -10,7 +10,7 @@ import { SubmenuItem } from 'src/app/shared/models/menu/submenu-item';
   templateUrl: './menu.component.html',
   styleUrls: ['./menu.component.scss']
 })
-export class MenuComponent implements OnInit {
+export class MenuComponent implements AfterViewInit {
 
   public menuItems: MenuItem[] = [
     { name: 'Абитуриенту' },
@@ -22,29 +22,29 @@ export class MenuComponent implements OnInit {
   public enrolleeSubmenuItems: SubmenuItem[] = [
     {
       name: 'Прикладная информатика',
-      photoUrl: '',
+      photoUrl: 'https://www.xjtlu.edu.cn/en/assets/image-cache/images/programmes/msc-applied-informatics.974a2c6e.jpg',
       // tslint:disable-next-line: max-line-length
-      description: 'Это первая в России учебная программа по подготовке бакалавров в области социологии техники, инженерной деятельности и инновационных процессов. В ее основе рассмотрение науки, техники и общества как взаимосвязанных элементов единой системы на базе современных социальных исследований с применением количественных и качественных методов. Базовая кафедра «Социология и культурология».',
+      description: 'Это первая в России учебная программа по подготовке бакалавров в области социологии техники, инженерной деятельности и инновационных процессов. В ее основе рассмотрение науки, техники и общества как.',
       link: '/enrollee/sgn3',
       cta: 'Узнать о направлении',
     },
     {
       name: 'Социология инженерной деятельности',
-      photoUrl: '',
-      description: 'Умереть не встать',
+      photoUrl: 'https://sociology.adelphi.edu/files/2015/08/hero-sociology-people.png?t=1438786797-467104-b',
+      description: 'Как фундаментальная наука, социология объясняет социальные явления, собирает и обобщает информацию о них. Как прикладная наука, социология позволяет прогнозировать социальные явления и управлять ими.',
       link: '/enrollee/sgn2',
       cta: 'Узнать о направлении',
     },
     {
       name: 'Календарь абитуриента',
-      photoUrl: '',
-      description: 'lorem ipsum dolorsit amet',
+      photoUrl: 'https://bloximages.newyork1.vip.townnews.com/dentonrc.com/content/tncms/assets/v3/editorial/8/bf/8bff130a-4942-11e8-a14e-e309ea033e2b/5ae1b3f5acabe.image.jpg?resize=400%2C267',
+      description: 'Социоло́гия (от лат. societas — общество и др.-греч. λόγος — слово) — наука об обществе, составляющих его системах и закономерностях его функционирования и развития, социальных институтах.',
       link: '/enrollee/calendar',
       cta: 'Смотреть календарь',
     },
     {
       name: 'Часто задаваемые вопросы',
-      photoUrl: '',
+      photoUrl: 'http://www.homenet.it/wp-content/uploads/2018/09/faq-tbs-msc.png',
       description: 'lorem ipsum dolorsit amet',
       link: '/enrollee/faq',
       cta: 'Узнать ответы',
@@ -104,21 +104,32 @@ export class MenuComponent implements OnInit {
   constructor(
     public readonly vp: ViewportService,
     public readonly scroll: ScrollService,
-    public readonly menu: MenuService
+    public readonly menu: MenuService,
+    public readonly ref: ElementRef<HTMLElement>
   ) { }
 
   @HostListener('mouseleave')
   onleave() {
-    this.selectedItem = null;
-    console.log('leaved');
+    this.closeDropDown();
   }
 
   public onEnter(itemName: string) {
-    console.log('entered');
     this.selectedItem = itemName;
   }
 
-  ngOnInit() {
+  public closeDropDown() {
+    this.selectedItem = null
+    console.log('leaved');
   }
+
+  ngAfterViewInit() {
+    const dropDown = <HTMLMenuElement>this.ref.nativeElement.querySelector('menu.drop-down');
+    console.warn(this.ref, dropDown);
+
+    if (dropDown) {
+      dropDown.addEventListener('mouseleave', () => this.closeDropDown());
+    }
+  }
+
 
 }
